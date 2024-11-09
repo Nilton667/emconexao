@@ -13,3 +13,7 @@ Route::get('/sobre', function () {
 Route::get('/contacto', function () {
     return view('index');
 });
+
+Route::get('/servicos', function () {
+    return view('index');
+});

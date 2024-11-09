@@ -28,7 +28,7 @@
                             <a href="javascript:void(0)" onclick="setLang('pt')"><img class="active" src="{{ asset('img/pt.png') }}" alt="lang"></a>
                             <a href="javascript:void(0)" onclick="setLang('en')"><img src="{{ asset('img/en.png') }}" alt="lang"></a>
                         </div>
-                        <div class="contacto-home d-flex flex-row">
+                        <div class="contacto-home d-flex">
                             <span ><i class="las la-phone"></i> <a href="tel:00244935074974">(+244) 935 074 974</a></span>
                             <span><i class="las la-envelope"></i> <a href="mailto:geral@emconexao.co.ao">geral@emconexao.co.ao</a></span>
                         </div>
@@ -36,22 +36,25 @@
                 </div>
             </div>
 
-            <nav class="navbar navbar-expand-lg nav-header">
+            <nav class="navbar navbar-expand-lg nav-header p-0">
                 <div class="container">
-                  <a class="navbar-brand" href="#"></a>
+                  <a class="navbar-brand" href="javascript:void(0)"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/sobre">Sobre Nós</a>
+                        <a class="nav-link {{ request()->is('sobre') ? 'active' : '' }}" href="/sobre">Sobre Nós</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/contacto">Contacto</a>
+                        <a class="nav-link {{ request()->is('servicos') ? 'active' : '' }}" href="/servicos">Serviços</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{ request()->is('contacto') ? 'active' : '' }}" href="/contacto">Contacto</a>
                       </li>
                     </ul>
                   </div>
@@ -59,8 +62,9 @@
             </nav>
 
             @yield('content')
-            <br>
+            <br/><br/>
             <footer>
+                <br/>
                 <div class="p-4 container">
                     <div class="row">
                         <div class="col-12 col-md-3">
@@ -72,19 +76,41 @@
                             <br>
                             <h5>Mais Informação</h5>
                             <div class="divider"></div>
+                            <ul class="list">
+                                <li><a class="{{ request()->is('/') ? 'active' : '' }}" href="/">Home</a></li>
+                                <li><a class="{{ request()->is('sobre') ? 'active' : '' }}" href="/sobre">Sobre Nós</a></li>
+                                <li><a class="{{ request()->is('servicos') ? 'active' : '' }}" href="/servicos">Serviços</a></li>
+                                <li><a class="{{ request()->is('contacto') ? 'active' : '' }}" href="/contacto">Contacto</a></li>
+                            </ul>
                         </div>
                         <div class="col-12 col-md-3">
                             <br>
                             <h5>Contactos</h5>
                             <div class="divider"></div>
+                            <ul class="list">
+                                <li>
+                                    <i class="las la-map-marked"></i> Luanda, Angola <br/> Bairro do Futungo, AV. 21 de janeiro
+                                </li>
+                                <li>
+                                    <i class="las la-phone"></i> <a href="tel:935074974">(+244) 935 074 974</a>
+                                </li>
+                                <li>
+                                    <i class="las la-envelope"></i> <a href="mailto:geral@emconexao.co.ao">geral@emconexao.co.ao</a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="col-12 col-md-3">
                             <br>
                             <h5>Siga-nos</h5>
                             <div class="divider"></div>
+                            <ul class="list flex-row">
+                                <li><a target="_blank" href=""><i class="lab la-facebook"></i></a></li>
+                                <li><a target="_blank" href=""><i class="lab la-instagram"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <br/><br/>
                 <div class="copyColor">
                     <div class="container">
                         <div class="row m-0">

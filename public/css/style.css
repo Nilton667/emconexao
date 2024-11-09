@@ -36,6 +36,12 @@
 		  transform: rotateZ(0deg);
 		}
 	}
+    a{
+        text-decoration: none;
+    }
+    a[href]{
+        color: #003399;
+    }
     .nav-header{
         background-color: #6699ff;
         color: #fff;
@@ -50,9 +56,48 @@
     .nav-header .nav-item{
         min-width: 100px;
     }
-
+    .nav-header .nav-link{
+        transition: all 0.5s;
+        text-align: center;
+        padding: 14px;
+        border-radius: 8px;
+    }
     .nav-header .nav-link.active{
-        color: #6699ff;
+        color: #003399;
+        border-bottom: 4px #00134F solid;
+    }
+    .nav-header .nav-link:hover{
+        color: #003399;
+        border-bottom: 4px #00134F solid;
+    }
+    .list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .list li{
+        margin-bottom: 7px;
+    }
+    footer .list li .lab{
+        font-size: 42px;
+    }
+    footer .list li .las{
+        font-size: 22px;
+    }
+    footer .list li{
+        font-weight: 500;
+    }
+    footer .list li a[href]{
+        font-size: 14px;
+        color: #fff!important;
+        transition: all 0.3s;
+    }
+    footer .list li a[href]:hover,
+    footer .list li a[href].active{
+        opacity: 0.6!important;
     }
     footer{
         background-color: #6699ff;
@@ -75,12 +120,6 @@
         font-size: .9em;
         font-weight: 500;
     }
-    a{
-        text-decoration: none;
-    }
-    a[href]{
-        color: #003399!important;
-    }
     .lang img{
         width: 28px;
         margin: 2px;
@@ -101,6 +140,7 @@
     }
     .contacto-home{
         font-weight: 500;
+        flex-direction: row;
     }
     .contacto-home i{
         font-size: 1.2em;
@@ -129,7 +169,7 @@
     .btn-primary {
         background: #0054A6;
         color: #fff;
-        border: none !important;
+        border: none!important;
     }
     .swal2-confirm{
         background: #0054A6!important;
@@ -144,8 +184,18 @@
         color: #fff;
     }
 }
+@media screen and (max-width: 991px) {
+    .contacto-home{
+        margin-top: 8px;
+        text-align: end;
+        flex-direction: column!important;
+    }
+    .navbar.navbar-expand-lg.nav-header{
+        padding-top: 8px!important;
+        padding-bottom: 8px!important;
+    }
+}
 @media screen and (min-width: 991px) {
-
     ::-webkit-scrollbar {
         width: 8px;
     }
