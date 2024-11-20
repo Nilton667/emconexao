@@ -62,9 +62,9 @@
             </nav>
 
             @yield('content')
-            <br/><br/>
+
             <footer>
-                <br/>
+                <br/><br/>
                 <div class="p-4 container">
                     <div class="row">
                         <div class="col-12 col-md-3">
